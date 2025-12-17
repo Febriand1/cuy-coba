@@ -83,7 +83,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   // Logo & Title
                   _buildHeader(theme),
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 30),
 
                   // Register Card
                   _buildRegisterCard(theme, size),
