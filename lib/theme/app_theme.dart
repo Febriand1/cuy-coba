@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /// Kelas untuk mengelola tema aplikasi
 class AppTheme {
@@ -10,7 +11,7 @@ class AppTheme {
         brightness: Brightness.light,
       ),
       useMaterial3: true,
-      fontFamily: 'Roboto',
+      textTheme: GoogleFonts.robotoTextTheme(),
       // AppBar
       appBarTheme: const AppBarTheme(centerTitle: false, elevation: 0),
       // Card
@@ -25,7 +26,7 @@ class AppTheme {
       dividerTheme: DividerThemeData(color: Colors.grey.shade200, space: 1),
       // ListTile
       listTileTheme: const ListTileThemeData(
-        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        contentPadding: EdgeInsets.symmetric(horizontal: 10),
       ),
     );
   }
@@ -38,7 +39,7 @@ class AppTheme {
         brightness: Brightness.dark,
       ),
       useMaterial3: true,
-      fontFamily: 'Roboto',
+      textTheme: GoogleFonts.robotoTextTheme(),
       // Scaffold
       scaffoldBackgroundColor: const Color(0xFF121212),
       // AppBar
@@ -60,7 +61,7 @@ class AppTheme {
       dividerTheme: DividerThemeData(color: Colors.grey.shade800, space: 1),
       // ListTile
       listTileTheme: const ListTileThemeData(
-        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        contentPadding: EdgeInsets.symmetric(horizontal: 10),
       ),
       // Bottom Navigation Bar
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(

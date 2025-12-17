@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Enum untuk mode tema aplikasi
-enum AppThemeMode {
-  system, // Mengikuti tema sistem
-  light, // Selalu terang
-  dark, // Selalu gelap
-}
+enum AppThemeMode { system, light, dark }
 
 /// Provider untuk mengelola tema aplikasi
 class ThemeProvider extends ChangeNotifier {
