@@ -70,10 +70,6 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Logo & Title
-                  _buildHeader(theme),
-                  const SizedBox(height: 40),
-
                   // Login Card
                   _buildLoginCard(theme, size),
                 ],
@@ -82,42 +78,6 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildHeader(ThemeData theme) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.2),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            Icons.ads_click,
-            size: 60,
-            color: theme.colorScheme.onPrimary,
-          ),
-        ),
-        const SizedBox(height: 24),
-        Text(
-          'Ads Admin',
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: theme.colorScheme.onPrimary,
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          'Platform Management System',
-          style: TextStyle(
-            fontSize: 16,
-            color: theme.colorScheme.onPrimary.withValues(alpha: 0.8),
-          ),
-        ),
-      ],
     );
   }
 
