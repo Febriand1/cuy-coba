@@ -18,7 +18,7 @@ class OverviewScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Recent Activity
-          _buildSectionTitle('Recent Activity'),
+          _buildSectionTitle(context, 'Recent Activity'),
           const SizedBox(height: 12),
           _buildActivityList(context),
         ],
@@ -31,8 +31,8 @@ class OverviewScreen extends StatelessWidget {
       crossAxisCount: 2,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      mainAxisSpacing: 12,
-      crossAxisSpacing: 12,
+      mainAxisSpacing: 16,
+      crossAxisSpacing: 16,
       childAspectRatio: 1.3,
       children: [
         StatTrendCard(
@@ -71,10 +71,14 @@ class OverviewScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSectionTitle(String title) {
+  Widget _buildSectionTitle(BuildContext context, String title) {
     return Text(
       title,
-      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
     );
   }
 

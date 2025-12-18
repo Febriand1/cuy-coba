@@ -15,9 +15,13 @@ class PerformanceScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Header
-          const Text(
+          Text(
             'Performance Metrics',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: theme.colorScheme.onSurface,
+            ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -72,7 +76,7 @@ class PerformanceScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Performance Details
-          _buildSectionTitle('Performance Details'),
+          _buildSectionTitle(context, 'Performance Details'),
           const SizedBox(height: 12),
           _buildPerformanceTable(context),
         ],
@@ -80,10 +84,14 @@ class PerformanceScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSectionTitle(String title) {
+  Widget _buildSectionTitle(BuildContext context, String title) {
     return Text(
       title,
-      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
     );
   }
 

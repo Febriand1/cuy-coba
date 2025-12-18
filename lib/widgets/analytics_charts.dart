@@ -38,9 +38,10 @@ class AnalyticsLineChart extends StatelessWidget {
             if (title.isNotEmpty) ...[
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
+                  color: theme.colorScheme.onSurface,
                 ),
               ),
               const SizedBox(height: 16),
@@ -191,9 +192,10 @@ class AnalyticsBarChart extends StatelessWidget {
             if (title.isNotEmpty) ...[
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
+                  color: theme.colorScheme.onSurface,
                 ),
               ),
               const SizedBox(height: 16),
@@ -320,9 +322,10 @@ class AnalyticsPieChart extends StatelessWidget {
             if (title.isNotEmpty) ...[
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
+                  color: theme.colorScheme.onSurface,
                 ),
               ),
               const SizedBox(height: 16),
@@ -371,9 +374,10 @@ class AnalyticsPieChart extends StatelessWidget {
                               ),
                               Text(
                                 item['value'] as String,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
+                                  color: theme.colorScheme.onSurface,
                                 ),
                               ),
                             ],
@@ -466,7 +470,11 @@ class StatTrendCard extends StatelessWidget {
             const Spacer(),
             Text(
               value,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: theme.colorScheme.onSurface,
+              ),
             ),
             const SizedBox(height: 4),
             Text(

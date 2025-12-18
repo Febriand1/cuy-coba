@@ -19,31 +19,31 @@ class AnalyticsScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Impressions Line Chart
-          _buildSectionTitle('Impressions (Last 7 Days)'),
+          _buildSectionTitle(context, 'Impressions (Last 7 Days)'),
           const SizedBox(height: 12),
           _buildImpressionsChart(),
           const SizedBox(height: 24),
 
           // Clicks Line Chart
-          _buildSectionTitle('Clicks (Last 7 Days)'),
+          _buildSectionTitle(context, 'Clicks (Last 7 Days)'),
           const SizedBox(height: 12),
           _buildClicksChart(),
           const SizedBox(height: 24),
 
           // Revenue Bar Chart
-          _buildSectionTitle('Revenue (Last 6 Months)'),
+          _buildSectionTitle(context, 'Revenue (Last 6 Months)'),
           const SizedBox(height: 12),
           _buildRevenueChart(),
           const SizedBox(height: 24),
 
           // Campaign Status Pie Chart
-          _buildSectionTitle('Campaign Status'),
+          _buildSectionTitle(context, 'Campaign Status'),
           const SizedBox(height: 12),
           _buildCampaignStatusChart(),
           const SizedBox(height: 24),
 
           // Traffic Sources
-          _buildSectionTitle('Traffic Sources'),
+          _buildSectionTitle(context, 'Traffic Sources'),
           const SizedBox(height: 12),
           _buildTrafficSourcesChart(),
         ],
@@ -96,10 +96,14 @@ class AnalyticsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSectionTitle(String title) {
+  Widget _buildSectionTitle(BuildContext context, String title) {
     return Text(
       title,
-      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
     );
   }
 
