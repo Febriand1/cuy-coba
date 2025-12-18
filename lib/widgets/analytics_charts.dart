@@ -26,6 +26,7 @@ class AnalyticsLineChart extends StatelessWidget {
 
     return Card(
       elevation: 0,
+      color: theme.colorScheme.surface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(color: theme.dividerColor),
@@ -52,9 +53,15 @@ class AnalyticsLineChart extends StatelessWidget {
                 LineChartData(
                   gridData: FlGridData(
                     show: true,
-                    drawVerticalLine: false,
+                    drawVerticalLine: true,
                     horizontalInterval: 1,
                     getDrawingHorizontalLine: (value) {
+                      return FlLine(
+                        color: theme.dividerColor.withValues(alpha: 0.5),
+                        strokeWidth: 1,
+                      );
+                    },
+                    getDrawingVerticalLine: (value) {
                       return FlLine(
                         color: theme.dividerColor.withValues(alpha: 0.5),
                         strokeWidth: 1,
@@ -127,17 +134,7 @@ class AnalyticsLineChart extends StatelessWidget {
                           );
                         },
                       ),
-                      belowBarData: BarAreaData(
-                        show: true,
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            gradientColor.withValues(alpha: 0.3),
-                            gradientColor.withValues(alpha: 0.0),
-                          ],
-                        ),
-                      ),
+                      belowBarData: BarAreaData(show: false),
                     ),
                   ],
                 ),
@@ -469,19 +466,19 @@ class StatTrendCard extends StatelessWidget {
             ),
             const Spacer(),
             Text(
+              title,
+              style: TextStyle(
+                fontSize: 14,
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
               value,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: theme.colorScheme.onSurface,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 12,
-                color: theme.colorScheme.onSurfaceVariant,
               ),
             ),
           ],

@@ -114,16 +114,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             Text(
               'Get Started',
-              style: theme.textTheme.headlineSmall?.copyWith(
+              style: TextStyle(
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
             Text(
               'Create your account to continue',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               textAlign: TextAlign.center,
             ),
@@ -210,12 +214,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Text.rich(
                     TextSpan(
                       text: 'I agree to the ',
-                      style: theme.textTheme.bodySmall,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                       children: [
                         TextSpan(
                           text: 'Terms & Conditions',
                           style: TextStyle(
-                            color: theme.colorScheme.primary,
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -223,7 +231,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         TextSpan(
                           text: 'Privacy Policy',
                           style: TextStyle(
-                            color: theme.colorScheme.primary,
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -249,17 +257,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
             // Divider
             Row(
               children: [
-                Expanded(child: Divider(color: theme.colorScheme.outline)),
+                Expanded(child: Divider(color: Theme.of(context).colorScheme.outline)),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
                     'or sign up with',
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                   ),
                 ),
-                Expanded(child: Divider(color: theme.colorScheme.outline)),
+                Expanded(child: Divider(color: Theme.of(context).colorScheme.outline)),
               ],
             ),
             const SizedBox(height: 24),
@@ -296,7 +304,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 Text(
                   'Already have an account? ',
-                  style: theme.textTheme.bodyMedium,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
                 CustomButton(
                   text: 'Sign In',

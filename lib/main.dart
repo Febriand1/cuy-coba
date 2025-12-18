@@ -107,6 +107,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       label: 'Dashboard',
     ),
     BottomNavItem(
+      icon: Icons.analytics_outlined,
+      activeIcon: Icons.analytics,
+      label: 'Analytics',
+    ),
+    BottomNavItem(
       icon: Icons.campaign_outlined,
       activeIcon: Icons.campaign,
       label: 'Campaigns',
@@ -116,13 +121,20 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       activeIcon: Icons.settings,
       label: 'Settings',
     ),
+    BottomNavItem(
+      icon: Icons.more_horiz,
+      activeIcon: Icons.more_horiz,
+      label: 'More\'s',
+    ),
   ];
 
   // Daftar halaman yang di-render
   late final List<Widget> _screens = [
     const DashboardScreen(),
+    const AnalyticScreen(),
     const CampaignsScreen(),
     SettingsScreen(onLogout: widget.onLogout),
+    const MoreScreen(),
   ];
 
   @override

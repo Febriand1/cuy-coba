@@ -9,14 +9,28 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(
         seedColor: Colors.indigo,
         brightness: Brightness.light,
+        surface: Colors.white,
       ),
       useMaterial3: true,
-      textTheme: GoogleFonts.outfitTextTheme(),
+      textTheme: GoogleFonts.outfitTextTheme().copyWith(
+        titleLarge: GoogleFonts.outfit(
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+          color: Colors.black,
+        ),
+      ),
+      // Scaffold
+      scaffoldBackgroundColor: Colors.white,
       // AppBar
-      appBarTheme: const AppBarTheme(centerTitle: false, elevation: 0),
+      appBarTheme: AppBarTheme(
+        centerTitle: false,
+        elevation: 0,
+        backgroundColor: Colors.white,
+      ),
       // Card
       cardTheme: CardThemeData(
         elevation: 0,
+        color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: BorderSide(color: Colors.grey.shade200),

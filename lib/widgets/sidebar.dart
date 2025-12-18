@@ -56,6 +56,11 @@ class CustomSidebar extends StatelessWidget {
     return Drawer(
       width: width,
       backgroundColor: backgroundColor ?? theme.colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(25),
+        ),
+      ),
       child: Column(
         children: [
           // Header
