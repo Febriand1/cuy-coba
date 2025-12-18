@@ -207,7 +207,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: 'Sign Up',
                     onPressed: widget.onGoToRegister!,  
                     variant: CustomButtonVariant.text,
-                    size: CustomButtonSize.small,
+                    size: CustomButtonSize.medium,
                   ),
                 ],
               ),

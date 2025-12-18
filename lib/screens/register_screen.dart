@@ -20,6 +20,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   bool _isLoading = false;
@@ -29,6 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void dispose() {
     _nameController.dispose();
     _emailController.dispose();
+    _phoneController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.dispose();
@@ -164,6 +166,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             const SizedBox(height: 16),
 
+            CustomInput(
+              controller: _phoneController,
+              labelText: 'Phone Number',
+              hintText: 'Enter your phone number',
+              keyboardType: TextInputType.phone,
+              prefixIcon: const Icon(Icons.phone_outlined),
+              validator: (value) => Validator.phone(value),
+              textInputAction: TextInputAction.next,
+            ),
+            const SizedBox(height: 16),
+
             // Password Field
             CustomPasswordInput(
               controller: _passwordController,
@@ -179,15 +192,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               controller: _confirmPasswordController,
               labelText: 'Confirm Password',
               hintText: 'Re-enter your password',
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please confirm your password';
-                }
-                if (value != _passwordController.text) {
-                  return 'Passwords do not match';
-                }
-                return null;
-              },
+              validator: (value) =>
+                  Validator.confirmPassword(value, _passwordController.text),
               textInputAction: TextInputAction.done,
               onSubmitted: (_) => _handleRegister(),
             ),
@@ -257,7 +263,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             // Divider
             Row(
               children: [
-                Expanded(child: Divider(color: Theme.of(context).colorScheme.outline)),
+                Expanded(
+                  child: Divider(color: Theme.of(context).colorScheme.outline),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
@@ -267,7 +275,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
-                Expanded(child: Divider(color: Theme.of(context).colorScheme.outline)),
+                Expanded(
+                  child: Divider(color: Theme.of(context).colorScheme.outline),
+                ),
               ],
             ),
             const SizedBox(height: 24),
@@ -314,7 +324,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   text: 'Sign In',
                   onPressed: widget.onBackToLogin,
                   variant: CustomButtonVariant.text,
-                  size: CustomButtonSize.small,
+                  size: CustomButtonSize.medium,
                 ),
               ],
             ),
